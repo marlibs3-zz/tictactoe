@@ -106,7 +106,6 @@ class GameContainer extends Component {
     )
   }
 
-
 }
 
 export default GameContainer;
