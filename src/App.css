@@ -1,0 +1,47 @@
+.game-container {
+  display: flex;
+  height: 80vw;
+  position: relative;
+  flex-direction: column;
+}
+
+.game-container {
+  display: flex;
+  height: 80vw;
+  position: relative;
+  flex-direction: column;
+}
+  
+  .grid {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 50vh;
+    max-height: 50vh;
+  }
+  
+  .row {
+    display: flex;
+    flex: 1;
+  }
+  
+  .field {
+    flex: 1;
+    border: 2px solid black;
+  }
+  
+  .player1 {
+    background-image: url('hamster.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .player2 {
+    background-image: url('rabbit.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
