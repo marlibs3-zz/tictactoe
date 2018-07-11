@@ -1,47 +1,67 @@
-.game-container {
-  display: flex;
-  height: 80vw;
-  position: relative;
-  flex-direction: column;
+body {
+  background-color: #d8e2cc;
 }
 
 .game-container {
   display: flex;
-  height: 80vw;
   position: relative;
   flex-direction: column;
 }
-  
-  .grid {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    max-width: 50vh;
-    max-height: 50vh;
-  }
-  
-  .row {
-    display: flex;
-    flex: 1;
-  }
-  
-  .field {
-    flex: 1;
-    border: 2px solid black;
-  }
-  
-  .player1 {
-    background-image: url('hamster.png');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .player2 {
-    background-image: url('rabbit.png');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  h1, h2 {
-    text-align: center;
-  }
+
+.game-grid {
+  display: flex;
+  height: 35vw;
+  width: 35vw;
+  align-self: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 50vh;
+  max-height: 50vh;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.field {
+  flex: 1;
+  border: 2px solid black;
+}
+
+.player1 {
+  background-image: url('hamster.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.player2 {
+  background-image: url('rabbit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1, h2 {
+  font-family: 'Dosis', sans-serif;
+  text-align: center;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 24px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 5px;
+}

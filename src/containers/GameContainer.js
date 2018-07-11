@@ -96,11 +96,12 @@ class GameContainer extends Component {
       <div className="game-container">
         <h1>Welcome to the emoji tic-tac-toe</h1>
         <h2>Player {this.state.currentPlayer}'s turn</h2>
-        <Grid
+        <div className="game-grid"><Grid
           currentPlayer={this.state.currentPlayer}
           handleFieldClick={this.handleFieldClick}
           winner={this.state.winner}
         />
+        </div>
         <button onClick={this.resetGameContainer}>Restart</button>
         <h2>{this.state.winner}</h2>
       </div>
