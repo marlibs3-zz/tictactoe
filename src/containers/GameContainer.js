@@ -7,23 +7,20 @@ class GameContainer extends Component {
     super(props)
     this.state = {
       currentPlayer: 1,
+      currentPlayerEmoji: "🐹",
       clickedFields: [],
       turn: 1,
       winner: null
     }
 
     this.handleFieldClick = this.handleFieldClick.bind(this)
-    this.swapPlayer = this.swapPlayer.bind(this)
-    this.recordFieldClick = this.recordFieldClick.bind(this)
-    this.resetGameContainer = this.resetGameContainer.bind(this)
-    this.checkForWinner2 = this.checkForWinner2.bind(this)
   }
 
   swapPlayer() {
     if (this.state.currentPlayer === 1) {
-      this.setState({currentPlayer: 2})
+      this.setState({currentPlayer: 2, currentPlayerEmoji: "🐰"})
     } else {
-      this.setState({currentPlayer: 1})
+      this.setState({currentPlayer: 1, currentPlayerEmoji: "🐹"})
     }
   }
 
@@ -34,6 +31,7 @@ class GameContainer extends Component {
     }
 
     const newClickedFields = this.state.clickedFields.concat([newClick])
+    console.log(this.state.turn)
 
     this.setState( {
       clickedFields: newClickedFields,
@@ -41,12 +39,12 @@ class GameContainer extends Component {
     })
 
     if (this.state.turn >= 5) {
-      this.checkForWinner2(newClick)
+      this.checkForWinner(newClick)
     }
 
   }
 
-  checkForWinner2(lastClick) {
+  checkForWinner(lastClick) {
     const winningCombinations = [
       ["1", "4", "7"],
       ["2", "5", "8"],
@@ -94,8 +92,8 @@ class GameContainer extends Component {
   render() {
     return (
       <div className="game-container">
-        <h1>Welcome to the emoji tic-tac-toe</h1>
-        <h2>Player {this.state.currentPlayer}'s turn</h2>
+        <h1>Tic Tac Toe</h1>
+        <h2>Player {this.state.currentPlayer}'s turn {this.state.currentPlayerEmoji}</h2>
         <div className="game-grid"><Grid
           currentPlayer={this.state.currentPlayer}
           handleFieldClick={this.handleFieldClick}
