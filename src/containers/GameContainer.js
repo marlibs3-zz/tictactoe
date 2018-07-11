@@ -40,8 +40,7 @@ class GameContainer extends Component {
 
     if (this.state.turn >= 5) {
       this.checkForWinner(newClick)
-    }
-
+    } 
   }
 
   checkForWinner(lastClick) {
@@ -92,7 +91,7 @@ class GameContainer extends Component {
   render() {
     return (
       <div className="game-container">
-        <h1>Tic Tac Toe</h1>
+        <h1><a href="/index">Tic Tac Toe</a></h1>
         <h2>Player {this.state.currentPlayer}'s turn {this.state.currentPlayerEmoji}</h2>
         <div className="game-grid"><Grid
           currentPlayer={this.state.currentPlayer}
