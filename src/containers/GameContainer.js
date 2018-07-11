@@ -31,7 +31,6 @@ class GameContainer extends Component {
     }
 
     const newClickedFields = this.state.clickedFields.concat([newClick])
-    console.log(this.state.turn)
 
     this.setState( {
       clickedFields: newClickedFields,

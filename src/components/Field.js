@@ -18,7 +18,7 @@ class Field extends Component {
       player: this.props.currentPlayer
     }
 
-    if (this.state.player === '') {
+    if (this.state.player === '' && this.props.winner === null) {
       this.setState({player: 'player' + this.props.currentPlayer})
       this.props.onClick(position);
     }
