@@ -10,7 +10,7 @@ class GameContainer extends Component {
       currentPlayerEmoji: "🐹",
       clickedFields: [],
       turn: 1,
-      winner: null
+      winner: null,
     }
 
     this.handleFieldClick = this.handleFieldClick.bind(this)
@@ -51,7 +51,7 @@ class GameContainer extends Component {
       ["4", "5", "6"],
       ["7", "8", "9"],
       ["1", "5", "9"],
-      ["3", "5", "7"]
+      ["3", "5", "7"],
     ]
     const currentPlayerFields = this.state.clickedFields.filter((field) => {
       return field.player === this.state.currentPlayer
@@ -68,7 +68,7 @@ class GameContainer extends Component {
         return newCurrentPlayerFields.includes(winningField)
       })
       if (winner) {
-        this.setState({winner: `Player ${this.state.currentPlayer} wins!`});
+        this.setState({winner: `${this.state.currentPlayerEmoji} ${this.state.currentPlayerEmoji} ${this.state.currentPlayerEmoji} Player ${this.state.currentPlayer} wins! ${this.state.currentPlayerEmoji} ${this.state.currentPlayerEmoji} ${this.state.currentPlayerEmoji}`});
       }
     })
   }
@@ -82,6 +82,14 @@ class GameContainer extends Component {
     }
 
   }
+
+  undoMove() {
+    
+    // clear ownership of field
+    // swap turn
+    // -1 from turn counter
+    // delete last item from clicked fields
+    }
 
   resetGameContainer() {
     window.location.reload()
@@ -98,7 +106,10 @@ class GameContainer extends Component {
           winner={this.state.winner}
         />
         </div>
+        <div className="buttons">
+        <button onClick={this.undoMove}>Undo</button>
         <button onClick={this.resetGameContainer}>Restart</button>
+        </div>
         <h2>{this.state.winner}</h2>
       </div>
 

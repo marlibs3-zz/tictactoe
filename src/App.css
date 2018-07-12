@@ -17,6 +17,14 @@ h1 {
   font-size: 36px;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  position: relative;
+
+}
+
 button {
   display: flex;
   flex-direction: row;
@@ -24,7 +32,7 @@ button {
   align-self: center;
   font-family: 'Gaegu', cursive;
   font-size: 24px;
-  margin-top: 20px;
+  margin: 15px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 4px;
@@ -57,12 +65,25 @@ button {
 .row {
   display: flex;
   flex: 1;
+  border-top: 2px solid black;
 }
 
-.field {
+.row:last-child {
+  display: flex;
   flex: 1;
-  border: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
 
+.field{
+  flex: 1;
+  border-left: 2px solid black;
+}
+
+.field:last-child {
+  flex: 1;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 
 .player1 {

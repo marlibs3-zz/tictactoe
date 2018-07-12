@@ -1,70 +1,79 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Field from './Field'
 
-const Grid = (props) => {
+class Grid extends Component {
 
-  return (
+  constructor(props) {
+    super(props)
+    this.state = {
+      // fields: Array(9).fill(null),
+    }
+  }
+
+  render() {
+  
+  return(
     <div className="grid">
       <div className="row">
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="1"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
 
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="2"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
 
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="3"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
       </div>
       <div className="row">
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="4"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
 
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="5"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
 
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="6"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
       </div>
       <div className="row">
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="7"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
 
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="8"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
 
         <Field
-          currentPlayer={props.currentPlayer}
+          currentPlayer={this.props.currentPlayer}
           fieldId="9"
-          winner={props.winner}
-          onClick={props.handleFieldClick}/>
+          winner={this.props.winner}
+          onClick={this.props.handleFieldClick}/>
       </div>
     </div>
-
   )
+  }
 }
 
 export default Grid;

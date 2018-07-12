@@ -6,7 +6,7 @@ class Field extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      player: ''
+      player: '',
     }
 
     this.handleFieldValue = this.handleFieldValue.bind(this)
@@ -30,11 +30,9 @@ class Field extends Component {
       <div className={`field ${this.state.player}`} onClick={this.handleFieldValue}>
 
       </div>
-
     )
   }
 
 }
 
-
-export default Field
+export default Field;
