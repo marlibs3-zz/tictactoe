@@ -6,7 +6,7 @@ class Grid extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // fields: Array(9).fill(null),
+      // This was refactored into a class to try to pass info to field so that undo could be implemented. That did not work.
     }
   }
 
