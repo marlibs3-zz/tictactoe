@@ -26,10 +26,20 @@ class Grid extends Component {
     }
   }
 
+  reduceTurn() {
+    const reducedTurn = this.state.turn - 1
+    this.setState({turn: reducedTurn})
+  }
+ 
   undoLastMove() {
     const sliced = this.state.fields.slice();
     sliced[this.state.lastClicked] = null
     this.setState({fields: sliced})
+
+    this.swapPlayer()
+
+    this.reduceTurn()
+
   }
 
   calculateWinner(fields) {
@@ -91,10 +101,15 @@ class Grid extends Component {
       />
     );
   }
+
+  resetGameContainer() {
+    window.location.reload()
+  }
+
   render() {
   
   return(
-    <div>
+    <div className="game-center-class">
     <h2>Player {this.state.currentPlayer}'s turn {this.state.currentPlayerEmoji}</h2>
     <div className="game-grid">
       <div className="grid">
@@ -115,7 +130,10 @@ class Grid extends Component {
         </div>
       </div>
     </div>
+    <div className="button-row">
     <button onClick={this.undoLastMove}>Undo</button>
+    <button onClick={this.resetGameContainer}>Restart</button>
+    </div>
     <h2>{this.state.winner}</h2>
     </div>
   )

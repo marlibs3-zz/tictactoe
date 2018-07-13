@@ -17,12 +17,11 @@ h1 {
   font-size: 36px;
 }
 
-.buttons {
+.button-row {
   display: flex;
   flex-direction: row;
   align-self: center;
   position: relative;
-
 }
 
 button {
@@ -49,9 +48,13 @@ button {
   display: flex;
   height: 25vw;
   width: 25vw;
-  align-self: center;
-  position: relative;
+}
+
+.game-center-class {
+  display: flex;
   flex-direction: column;
+  align-items: center; 
+  margin: 0px;
 }
 
 .grid {
