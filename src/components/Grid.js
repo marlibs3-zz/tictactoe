@@ -11,9 +11,11 @@ class Grid extends Component {
       turn: 1,
       winner: null,
       fields: Array(9).fill(null),
+      lastClicked: null,
     }
 
     this.handleClick = this.handleClick.bind(this)
+    this.undoLastMove = this.undoLastMove.bind(this)
   }
 
   swapPlayer() {
@@ -22,6 +24,12 @@ class Grid extends Component {
     } else {
       this.setState({currentPlayer: 1, currentPlayerEmoji: "🐹"})
     }
+  }
+
+  undoLastMove() {
+    const sliced = this.state.fields.slice();
+    sliced[this.state.lastClicked] = null
+    this.setState({fields: sliced})
   }
 
   calculateWinner(fields) {
@@ -48,6 +56,9 @@ class Grid extends Component {
   }
 
   handleClick(i) {
+    this.setState({
+      lastClicked: i,
+    });
     // if there is no winner
     if (!this.state.winner) {
       // take a copy of the current state of the game
@@ -104,6 +115,7 @@ class Grid extends Component {
         </div>
       </div>
     </div>
+    <button onClick={this.undoLastMove}>Undo</button>
     <h2>{this.state.winner}</h2>
     </div>
   )
