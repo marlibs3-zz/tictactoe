@@ -62,11 +62,12 @@ class Grid extends Component {
           turn: this.state.turn + 1
         });
 
+        // check if this is a winning play
         if (this.calculateWinner(sliced)) {
           this.declareWinner()
-        }
-
+        } else {
         this.swapPlayer()
+        }
       }
     }
   }
